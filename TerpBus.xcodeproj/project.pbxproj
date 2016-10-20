@@ -1,0 +1,391 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		171E0C7E1B8E5B84001E6242 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171E0C7D1B8E5B84001E6242 /* AppDelegate.swift */; };
+		171E0C801B8E5B84001E6242 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171E0C7F1B8E5B84001E6242 /* MasterViewController.swift */; };
+		171E0C821B8E5B84001E6242 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171E0C811B8E5B84001E6242 /* DetailViewController.swift */; };
+		171E0C851B8E5B84001E6242 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 171E0C831B8E5B84001E6242 /* Main.storyboard */; };
+		171E0C871B8E5B84001E6242 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 171E0C861B8E5B84001E6242 /* Assets.xcassets */; };
+		171E0C8A1B8E5B84001E6242 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 171E0C881B8E5B84001E6242 /* LaunchScreen.storyboard */; };
+		4778AAF8E0E3311CEEC4522E /* Pods_CandySearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F19F98AD822176B539A13D1E /* Pods_CandySearch.framework */; };
+		E72F48411D5A681D004B95E4 /* login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72F48401D5A681D004B95E4 /* login.swift */; };
+		E74F0E001D469C3400445FF6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74F0DFF1D469C3400445FF6 /* MapViewController.swift */; };
+		E7C2F19A1D391558007FCC65 /* RouteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2F1991D391558007FCC65 /* RouteItem.swift */; };
+		E7F4388F1D30380B00700C4D /* BusItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F4388E1D30380B00700C4D /* BusItem.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		171E0C7A1B8E5B84001E6242 /* TerpBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TerpBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		171E0C7D1B8E5B84001E6242 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		171E0C7F1B8E5B84001E6242 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		171E0C811B8E5B84001E6242 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		171E0C841B8E5B84001E6242 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		171E0C861B8E5B84001E6242 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		171E0C891B8E5B84001E6242 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		171E0C8B1B8E5B84001E6242 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23368B8F2B8103AEE3487E1C /* Pods-CandySearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CandySearch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CandySearch/Pods-CandySearch.debug.xcconfig"; sourceTree = "<group>"; };
+		3A0E3BCB6D2836B17294917A /* Pods-CandySearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CandySearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-CandySearch/Pods-CandySearch.release.xcconfig"; sourceTree = "<group>"; };
+		E72F48401D5A681D004B95E4 /* login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = login.swift; sourceTree = "<group>"; };
+		E74F0DFF1D469C3400445FF6 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		E7C2F1991D391558007FCC65 /* RouteItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteItem.swift; sourceTree = "<group>"; };
+		E7F4388E1D30380B00700C4D /* BusItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusItem.swift; sourceTree = "<group>"; };
+		F19F98AD822176B539A13D1E /* Pods_CandySearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CandySearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		171E0C771B8E5B84001E6242 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4778AAF8E0E3311CEEC4522E /* Pods_CandySearch.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		171E0C711B8E5B84001E6242 = {
+			isa = PBXGroup;
+			children = (
+				171E0C7C1B8E5B84001E6242 /* TerpBus */,
+				171E0C7B1B8E5B84001E6242 /* Products */,
+				1E4B29CFF559181E60A8C4AB /* Pods */,
+				8322F3AFDEE0CECD78342981 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		171E0C7B1B8E5B84001E6242 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				171E0C7A1B8E5B84001E6242 /* TerpBus.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		171E0C7C1B8E5B84001E6242 /* TerpBus */ = {
+			isa = PBXGroup;
+			children = (
+				171E0C7D1B8E5B84001E6242 /* AppDelegate.swift */,
+				171E0C7F1B8E5B84001E6242 /* MasterViewController.swift */,
+				171E0C811B8E5B84001E6242 /* DetailViewController.swift */,
+				E7C2F1991D391558007FCC65 /* RouteItem.swift */,
+				E74F0DFF1D469C3400445FF6 /* MapViewController.swift */,
+				E7F4388E1D30380B00700C4D /* BusItem.swift */,
+				E72F48401D5A681D004B95E4 /* login.swift */,
+				171E0C831B8E5B84001E6242 /* Main.storyboard */,
+				171E0C861B8E5B84001E6242 /* Assets.xcassets */,
+				171E0C881B8E5B84001E6242 /* LaunchScreen.storyboard */,
+				171E0C8B1B8E5B84001E6242 /* Info.plist */,
+			);
+			name = TerpBus;
+			path = CandySearch;
+			sourceTree = "<group>";
+		};
+		1E4B29CFF559181E60A8C4AB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				23368B8F2B8103AEE3487E1C /* Pods-CandySearch.debug.xcconfig */,
+				3A0E3BCB6D2836B17294917A /* Pods-CandySearch.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8322F3AFDEE0CECD78342981 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F19F98AD822176B539A13D1E /* Pods_CandySearch.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		171E0C791B8E5B84001E6242 /* TerpBus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 171E0CA41B8E5B84001E6242 /* Build configuration list for PBXNativeTarget "TerpBus" */;
+			buildPhases = (
+				EE646735D77C8C42720F2AEF /* [CP] Check Pods Manifest.lock */,
+				171E0C761B8E5B84001E6242 /* Sources */,
+				171E0C771B8E5B84001E6242 /* Frameworks */,
+				171E0C781B8E5B84001E6242 /* Resources */,
+				5228133F3921C5B82CE21FC2 /* [CP] Embed Pods Frameworks */,
+				29FA9772491E68BE76C5E72A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TerpBus;
+			productName = CandySearch;
+			productReference = 171E0C7A1B8E5B84001E6242 /* TerpBus.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		171E0C721B8E5B84001E6242 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Peartree Developers";
+				TargetAttributes = {
+					171E0C791B8E5B84001E6242 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = 171E0C751B8E5B84001E6242 /* Build configuration list for PBXProject "TerpBus" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 171E0C711B8E5B84001E6242;
+			productRefGroup = 171E0C7B1B8E5B84001E6242 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				171E0C791B8E5B84001E6242 /* TerpBus */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		171E0C781B8E5B84001E6242 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				171E0C8A1B8E5B84001E6242 /* LaunchScreen.storyboard in Resources */,
+				171E0C871B8E5B84001E6242 /* Assets.xcassets in Resources */,
+				171E0C851B8E5B84001E6242 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		29FA9772491E68BE76C5E72A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CandySearch/Pods-CandySearch-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5228133F3921C5B82CE21FC2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CandySearch/Pods-CandySearch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE646735D77C8C42720F2AEF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		171E0C761B8E5B84001E6242 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7C2F19A1D391558007FCC65 /* RouteItem.swift in Sources */,
+				171E0C821B8E5B84001E6242 /* DetailViewController.swift in Sources */,
+				E7F4388F1D30380B00700C4D /* BusItem.swift in Sources */,
+				171E0C801B8E5B84001E6242 /* MasterViewController.swift in Sources */,
+				171E0C7E1B8E5B84001E6242 /* AppDelegate.swift in Sources */,
+				E74F0E001D469C3400445FF6 /* MapViewController.swift in Sources */,
+				E72F48411D5A681D004B95E4 /* login.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		171E0C831B8E5B84001E6242 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				171E0C841B8E5B84001E6242 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		171E0C881B8E5B84001E6242 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				171E0C891B8E5B84001E6242 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		171E0CA21B8E5B84001E6242 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		171E0CA31B8E5B84001E6242 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		171E0CA51B8E5B84001E6242 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23368B8F2B8103AEE3487E1C /* Pods-CandySearch.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CandySearch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.TerpBus;
+				PRODUCT_NAME = TerpBus;
+			};
+			name = Debug;
+		};
+		171E0CA61B8E5B84001E6242 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A0E3BCB6D2836B17294917A /* Pods-CandySearch.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CandySearch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.TerpBus;
+				PRODUCT_NAME = TerpBus;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		171E0C751B8E5B84001E6242 /* Build configuration list for PBXProject "TerpBus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				171E0CA21B8E5B84001E6242 /* Debug */,
+				171E0CA31B8E5B84001E6242 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		171E0CA41B8E5B84001E6242 /* Build configuration list for PBXNativeTarget "TerpBus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				171E0CA51B8E5B84001E6242 /* Debug */,
+				171E0CA61B8E5B84001E6242 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 171E0C721B8E5B84001E6242 /* Project object */;
+}
