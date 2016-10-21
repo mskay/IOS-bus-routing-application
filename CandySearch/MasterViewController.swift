@@ -14,12 +14,12 @@ class MasterViewController: UITableViewController {
     // Tells if user has signed in or not
     var login = false
     
-  // MARK: - Properties
-  var detailViewController: DetailViewController? = nil
-  let searchController = UISearchController(searchResultsController: nil)
+    // - Properties
+    var detailViewController: DetailViewController? = nil
+    let searchController = UISearchController(searchResultsController: nil)
   
-  // MARK: - View Setup
-  override func viewDidLoad() {
+    // - View Setup
+    override func viewDidLoad() {
     super.viewDidLoad()
     
     // Setup the Search Controller
@@ -36,7 +36,7 @@ class MasterViewController: UITableViewController {
     }
     tableView.tableHeaderView = searchController.searchBar
     
-    
+    // Get all of the bus routes
     Alamofire.request(.GET, "http://api.umd.io/v0/bus/routes")
         .responseJSON { response in
             let json = JSON(response.result.value!)
@@ -48,18 +48,16 @@ class MasterViewController: UITableViewController {
                 // For the routes
                 self.busStops += [BusItem(title: title, stop_id: "", route_id: route_id, category: "Route", routes: [])]
                 
-                // For the maps
-                //self.busStops += [BusItem(title: title + " Map", stop_id: "", route_id: "map", category: "Map", routes: [])]
-               
+                // Gets route based on the route ID
                 Alamofire.request(.GET, "http://api.umd.io/v0/bus/routes/"+route_id)
                     .responseJSON { response in
                         let json = JSON(response.result.value!)
-                        //let stops = json["stops"]
+                        // Iterate through the stops in the route
                         for i in 0..<json["stops"].count {
                             let stop_id = json["stops"][i]["stop_id"].string!
                             let stop_title = json["stops"][i]["title"].string!
                             
-                            // For the Stops
+                            // For the Stops, if busStops array already contains that stop
                             if self.busStops.contains({$0.title == stop_title}) {
                                 let position = self.busStops.indexOf({$0.title == stop_title})
                                 self.busStops[position!].routes.append(route_id)
@@ -89,12 +87,14 @@ class MasterViewController: UITableViewController {
     super.didReceiveMemoryWarning()
   }
   
-  // MARK: - Table View
+  // - Table View functions
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
     return 1
   }
   
+  // Checks if the search bar is activated and text is typed in
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    // Return the filtered stops being searched for
     if searchController.active && searchController.searchBar.text != "" {
       return filteredStops.count
     }
@@ -104,21 +104,26 @@ class MasterViewController: UITableViewController {
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
     let bus: BusItem
+    // If search bar is activated and text is typed in
     if searchController.active && searchController.searchBar.text != "" {
       bus = filteredStops[indexPath.row]
     } else {
       bus = busStops[indexPath.row]
     }
+    // Labels the table cell
     cell.textLabel!.text = bus.title
     cell.detailTextLabel!.text = bus.category
     return cell
   }
   
+  // Filters the bus stop list based on search bar text
   func filterContentForSearchText(searchText: String, scope: String = "All") {
     filteredStops = busStops.filter({( bus : BusItem) -> Bool in
       let categoryMatch = (scope == "All") || (bus.category == scope)
+      // Returns all bus stops containing the searched string
       return categoryMatch && bus.title.lowercaseString.containsString(searchText.lowercaseString)
     })
+    // Reloads table data
     tableView.reloadData()
   }
   
@@ -127,11 +132,13 @@ class MasterViewController: UITableViewController {
     if segue.identifier == "showDetail" {
       if let indexPath = tableView.indexPathForSelectedRow {
         let bus: BusItem
+        // If search bar is activated and text is typed in
         if searchController.active && searchController.searchBar.text != "" {
           bus = filteredStops[indexPath.row]
         } else {
           bus = busStops[indexPath.row]
         }
+        // Sets up new view controller, passing in stop information
         let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
         controller.detailBus = bus
         controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
@@ -139,7 +146,6 @@ class MasterViewController: UITableViewController {
       }
     }
   }
-  
 }
 
 extension MasterViewController: UISearchBarDelegate {

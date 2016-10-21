@@ -48,8 +48,6 @@ class DetailViewController: UITableViewController {
                 }
                 // Otherwise they are clicking a route
             } else {
-                // Clear the array
-                //DetailViewController.stops.removeAll()
                 for i in 0..<DetailViewController.stops.count {
                     stopRoutes.append((DetailViewController.stops[i]))
                 }
@@ -58,32 +56,30 @@ class DetailViewController: UITableViewController {
                 }
                 
             }
-            //print(stopRoutes)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // may add again later, deleted now because calling twice
-        //configureView()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    // MARK: - Table View
+    // - Table View Functions
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
+    // Returns the number of stops
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return stopRoutes.count
     }
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
+        // Gets particular cell being clicked on in table
         let cellular = tableView.dequeueReusableCellWithIdentifier("Scell", forIndexPath: indexPath)
         
         // Means we are clicking on a stop, not a route
@@ -94,10 +90,9 @@ class DetailViewController: UITableViewController {
                     let json = JSON(response.result.value!)
                     // Checks if they are reporting a bus arrival at all
                     if json["predictions"]["direction"].count > 0 {
-                        // Fails for STAMP still!! Says there are 8 different predictions but thats not true
-                        // This checks if they are reporting more than one bus arrival
+                        // If there is more than one arrival, only print the first one
                         if json["predictions"]["direction"]["prediction"].count > 1 {
-                            // temporary solution to handle Stamp case
+                            // Checking in the Stamp case which is behaving incorrectly
                             if json["predictions"]["direction"]["prediction"].count == 8 {
                                 let arrival = json["predictions"]["direction"]["prediction"]["minutes"].string!
                                 cellular.textLabel!.text = route + " Ariving in: " + arrival + " minutes"
@@ -105,6 +100,7 @@ class DetailViewController: UITableViewController {
                                 let arrival =  json["predictions"]["direction"]["prediction"][0]["minutes"].string!
                                 cellular.textLabel!.text = route + " Ariving in: " + arrival + " minutes"
                             }
+                        // If only one arrival predicted, print it
                         } else {
                             let arrival = json["predictions"]["direction"]["prediction"]["minutes"].string!
                             cellular.textLabel!.text = route + " Ariving in: " + arrival + " minutes"
@@ -112,22 +108,20 @@ class DetailViewController: UITableViewController {
                         // Checks if there is a message but not arrival time
                     } else if (json["predictions"]["message"].count > 0) {
                         cellular.textLabel!.text = route + " " + json["predictions"]["message"]["text"].string!
+                    // Otherwise no arrival time is given for that bus
                     } else {
                         cellular.textLabel!.text = route + " Predictions: None"
                     }
             }
-        // Means we're clicking to view a map
-        } else if detailBus?.route_id == "map" {
-            let route = stopRoutes[indexPath.row]
-            print("I'm a map")
-            print(route)
+        // Means we have clicked on a bus route
         } else {
             let stop = stopRoutes[indexPath.row]
             print("http://api.umd.io/v0/bus/routes/" + detailBus!.route_id + "/arrivals/" + stop)
+            // Gets arrival time for the stops on the route
             Alamofire.request(.GET, "http://api.umd.io/v0/bus/routes/" + detailBus!.route_id + "/arrivals/" + stop)
                 .responseJSON { response in
-                    //let json = JSON(response.result.value!)
-                    // Does this otherwise stop list kept piling up, this makes you have to click the route twice to load data however -- FIX NEEDED --
+                    let json_route = JSON(response.result.value!)
+                    // Prevents stop list from piling up
                     DetailViewController.stops.removeAll()
                     DetailViewController.stops2.removeAll()
                     
@@ -136,51 +130,36 @@ class DetailViewController: UITableViewController {
                             let json = JSON(response.result.value!)
                             let stop_name = json[0]["title"].string!
                     // Checks if they are reporting a bus arrival at all
-                    if json["predictions"]["direction"].count > 0 {
-                        // Fails for STAMP still!! Says there are 8 different predictions but thats not true
+                    print(json_route["predictions"]["direction"])
+                    if json_route["predictions"]["direction"].count > 0 {
                         // This checks if they are reporting more than one bus arrival
-                        if json["predictions"]["direction"]["prediction"].count > 1 {
+                        if json_route["predictions"]["direction"]["prediction"].count > 1 {
                             // temporary solution to handle Stamp case
-                            if json["predictions"]["direction"]["prediction"].count == 8 {
-                                let arrival = json["predictions"]["direction"]["prediction"]["minutes"].string!
+                            if json_route["predictions"]["direction"]["prediction"].count == 8 {
+                                let arrival = json_route["predictions"]["direction"]["prediction"]["minutes"].string!
                                 cellular.textLabel!.text = stop_name + " Ariving in: " + arrival + " minutes"
                             } else {
-                                let arrival =  json["predictions"]["direction"]["prediction"][0]["minutes"].string!
+                                let arrival =  json_route["predictions"]["direction"]["prediction"][0]["minutes"].string!
                                 cellular.textLabel!.text = stop_name + " Ariving in: " + arrival + " minutes"
                             }
+                        // Otherwise there is only one arrival for the stop
                         } else {
-                            let arrival = json["predictions"]["direction"]["prediction"]["minutes"].string!
+                            let arrival = json_route["predictions"]["direction"]["prediction"]["minutes"].string!
                             cellular.textLabel!.text = stop_name + " Ariving in: " + arrival + " minutes"
                         }
                         // Checks if there is a message but not arrival time
-                    } else if (json["predictions"]["message"].count > 0) {
-                        cellular.textLabel!.text = stop_name + " " + json["predictions"]["message"]["text"].string!
+                    } else if (json_route["predictions"]["message"].count > 0) {
+                        cellular.textLabel!.text = stop_name + " " + json_route["predictions"]["message"]["text"].string!
+                    // Otherwise there is no predicted arrival
                     } else {
                         cellular.textLabel!.text = stop_name + " -- : None"
                     }
 
                             
-                    }// ALamofire request end
+                    }
             }
         }
         return cellular
     }
-    
-    /*
-    // MARK: - Segues
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "routeDetail" {
-            if let indexPath = tableView.indexPathForSelectedRow {
-                let bus: BusItem
-                bus = busStops[indexPath.row]
-                let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
-                controller.detailBus = bus
-                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
-                controller.navigationItem.leftItemsSupplementBackButton = true
-            }
-        }
-    }
- */
-    
     
 }

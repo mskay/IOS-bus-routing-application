@@ -15,7 +15,6 @@
 		171E0C8A1B8E5B84001E6242 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 171E0C881B8E5B84001E6242 /* LaunchScreen.storyboard */; };
 		4778AAF8E0E3311CEEC4522E /* Pods_CandySearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F19F98AD822176B539A13D1E /* Pods_CandySearch.framework */; };
 		E72F48411D5A681D004B95E4 /* login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72F48401D5A681D004B95E4 /* login.swift */; };
-		E74F0E001D469C3400445FF6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74F0DFF1D469C3400445FF6 /* MapViewController.swift */; };
 		E7C2F19A1D391558007FCC65 /* RouteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2F1991D391558007FCC65 /* RouteItem.swift */; };
 		E7F4388F1D30380B00700C4D /* BusItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F4388E1D30380B00700C4D /* BusItem.swift */; };
 /* End PBXBuildFile section */
@@ -32,7 +31,6 @@
 		23368B8F2B8103AEE3487E1C /* Pods-CandySearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CandySearch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CandySearch/Pods-CandySearch.debug.xcconfig"; sourceTree = "<group>"; };
 		3A0E3BCB6D2836B17294917A /* Pods-CandySearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CandySearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-CandySearch/Pods-CandySearch.release.xcconfig"; sourceTree = "<group>"; };
 		E72F48401D5A681D004B95E4 /* login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = login.swift; sourceTree = "<group>"; };
-		E74F0DFF1D469C3400445FF6 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E7C2F1991D391558007FCC65 /* RouteItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteItem.swift; sourceTree = "<group>"; };
 		E7F4388E1D30380B00700C4D /* BusItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusItem.swift; sourceTree = "<group>"; };
 		F19F98AD822176B539A13D1E /* Pods_CandySearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CandySearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,7 +73,6 @@
 				171E0C7F1B8E5B84001E6242 /* MasterViewController.swift */,
 				171E0C811B8E5B84001E6242 /* DetailViewController.swift */,
 				E7C2F1991D391558007FCC65 /* RouteItem.swift */,
-				E74F0DFF1D469C3400445FF6 /* MapViewController.swift */,
 				E7F4388E1D30380B00700C4D /* BusItem.swift */,
 				E72F48401D5A681D004B95E4 /* login.swift */,
 				171E0C831B8E5B84001E6242 /* Main.storyboard */,
@@ -230,7 +227,6 @@
 				E7F4388F1D30380B00700C4D /* BusItem.swift in Sources */,
 				171E0C801B8E5B84001E6242 /* MasterViewController.swift in Sources */,
 				171E0C7E1B8E5B84001E6242 /* AppDelegate.swift in Sources */,
-				E74F0E001D469C3400445FF6 /* MapViewController.swift in Sources */,
 				E72F48411D5A681D004B95E4 /* login.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
